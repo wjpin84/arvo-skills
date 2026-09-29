@@ -66,8 +66,10 @@ An operand is `{"var": name}` — an indicator, or a bar field `open`, `high`,
 
 Long only, one instrument, one interval. Every number a ruleset's grid may
 vary needs a default in `params`; a parameter named with no default is
-refused when read. `write_rule` refuses anything the engine would not run
-and names the construct — the refusal is the specification. What each
+refused when read. `write_rule` takes the definition as `rule` (an object
+or its JSON) and refuses anything the engine would not run, naming the
+construct (`unknown variant \`>=\`, expected one of …`) — the refusal is the
+specification. What each
 indicator is good for, and what common setups look like here, is
 `arvo-indicators`.
 
@@ -88,7 +90,10 @@ is deflated against it: the winner of a sixteen-point grid must beat what the
 best of sixteen no-skill tries would score. Widening a grid to find something
 is what deflation exists to catch. `write_ruleset` replaces a ruleset of the
 same name and refuses a name that collides with a compiled rule; then
-`run_study` with `strategy` set to the ruleset's name.
+`run_study` with `strategy` set to the ruleset's name. A rule as data has
+no grid of its own: `run_study` on the bare rule is refused — *"the
+parameter grid is empty, so the family tests nothing"* — so a study always
+goes through a ruleset with at least one axis, even a one-value one.
 
 ## A universe
 
@@ -113,12 +118,16 @@ hours (`arvo-engine universes refresh` on demand).
 ## Translating Pine
 
 `translate_pine` reads Pine v5 the way a person does, looking for the trade,
-and refuses when unsure. Translated: `ta.sma`, `ta.atr`, `ta.highest`,
-`ta.lowest` on any bar field; `ta.crossover`, `ta.crossunder`, `>`, `<`,
+and refuses when unsure. Translated: `ta.sma`, `ta.ema`, `ta.atr`, `ta.rsi`,
+`ta.highest`, `ta.lowest` on any bar field, **each assigned to a variable**
+(an indicator called inline inside a condition is refused: "nothing in the
+script gives this a value"); `ta.crossover`, `ta.crossunder`, `>`, `<`,
 `and`, `or`, `not`; `input.*` as parameters with their defaults;
 `strategy.entry` and `strategy.close` inside an `if`. Everything else —
-`request.security`, `strategy.short`, `ta.stoch`, `>=` — is refused **by
-name, all at once**. `plot` and its neighbours are set aside and listed,
+`request.security`, `strategy.short`, `ta.stoch`, `ta.bb`, `ta.cross`
+("either direction; say ta.crossover or ta.crossunder"), `>=` — is refused
+**by name, all at once**. The `strategy(...)` settings line is listed as
+ignored, like drawing. `plot` and its neighbours are set aside and listed,
 never silently dropped. The interval comes from you, not the script.
 
 It writes nothing: read the rule, then `write_rule`. Reading forty scripts

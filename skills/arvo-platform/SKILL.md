@@ -81,6 +81,12 @@ formatting one file rewrites its child modules too.
 - On Windows, a process spawning a long-lived child from a piped parent
   must mark its own std handles non-inheritable first, or the child holds
   the client's pipes.
+- The MCP server and the window talk to **whatever engine `engine.json`
+  names**, which may be an older binary than the source tree: a refusal
+  such as "expected one of SMA, ATR, MAX, MIN" from an engine built before
+  EMA/RSI/MACD landed is the engine's age, not the rule's error. Compare
+  the running process's binary date with `git log` before trusting a
+  refusal that contradicts the source.
 - The project folder is remembered in `%APPDATA%/com.arvo.desktop/project.json`;
   the engine writes `engine.json` and `control.json` beside it. The MCP
   server starts an engine from `ARVO_ENGINE` when none is running.

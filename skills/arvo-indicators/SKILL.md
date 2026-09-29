@@ -90,7 +90,9 @@ to pick.
 
 - Never fires: a comparison against `MAX`/`MIN` of its own field; a `>=`
   written as `>` on integer-like data; an indicator whose warm-up exceeds
-  the in-sample window.
+  the in-sample window. The engine does not report zero trades — it
+  refuses the run: *"no configuration in the family produced a measurable
+  result (N failed)"*, and records no finding.
 - Fires every bar: a `>`/`<` entry where a cross was meant.
 - Fires once and stops: a cross whose memory was reset by a stop and never
   re-crossed.
