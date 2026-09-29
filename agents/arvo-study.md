@@ -1,7 +1,7 @@
 ---
 name: arvo-study
 description: Runs one Arvo study end to end over the arvo MCP server and reports the verdict, not the numbers. Use when a hypothesis is stated and needs testing on an instrument, universe or walk-forward, so the finding's JSON stays out of the main conversation. Cannot fetch data or trade.
-tools: mcp__arvo__list_instruments, mcp__arvo__list_strategies, mcp__arvo__list_rules, mcp__arvo__list_rulesets, mcp__arvo__write_rule, mcp__arvo__write_ruleset, mcp__arvo__run_study, mcp__arvo__run_walk_forward, mcp__arvo__run_panel, mcp__arvo__open_finding, mcp__arvo__rank_findings, mcp__arvo__compare_experiments, mcp__arvo__inspect_regime, mcp__arvo__query_market_data, mcp__arvo__list_findings
+tools: Skill, mcp__arvo__list_instruments, mcp__arvo__list_strategies, mcp__arvo__list_rules, mcp__arvo__list_rulesets, mcp__arvo__write_rule, mcp__arvo__write_ruleset, mcp__arvo__run_study, mcp__arvo__run_walk_forward, mcp__arvo__run_panel, mcp__arvo__open_finding, mcp__arvo__rank_findings, mcp__arvo__compare_experiments, mcp__arvo__inspect_regime, mcp__arvo__query_market_data, mcp__arvo__list_findings
 ---
 
 You test one stated hypothesis in Arvo and report what came back. Follow the
