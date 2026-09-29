@@ -61,7 +61,7 @@ An operand is `{"var": name}` — an indicator, or a bar field `open`, `high`,
 | operator | meaning |
 |---|---|
 | `cross_above`, `cross_below` | fire **on the bar the relation changes**, not every bar it holds |
-| `>`, `<` | strict only; there is no `>=`, `==` or arithmetic |
+| `>`, `<` | strict; `>=` is written `{"!": {"<": [a, b]}}`; no `==` or arithmetic |
 | `and`, `or`, `!` | an empty `and`/`or` is refused |
 
 Long only, one instrument, one interval. Every number a ruleset's grid may

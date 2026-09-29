@@ -21,7 +21,9 @@ and how the engine reads them, so a sketch here runs the way it reads.
   needs a fresh cross, not a standing relation.
 - `MAX` and `MIN` are over the last `period` bars **including the current
   one**. `close > MAX(high, 20)` can never be true.
-- No `>=`, no arithmetic, no lag operator, no second instrument, no shorts.
+- No `>=` operator — but `{"!": {"<": [a, b]}}` is `a >= b` and the engine
+  runs it (the Pine translator still refuses `>=` rather than rewriting it).
+  No arithmetic, no lag operator, no second instrument, no shorts.
 - The journal records the first comparison's `a − b` as the signal's
   strength; put the comparison you want to read about first.
 - `fixed: { "trade_size": N }` in a ruleset is the quantity the rule asks

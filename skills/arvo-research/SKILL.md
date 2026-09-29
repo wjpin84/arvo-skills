@@ -39,7 +39,9 @@ Most backtest results are noise; the job is to avoid believing them.
    **under 30%**.
 5. Re-runs anything Supported at **conservative costs** — half again the
    commission, twice the slippage (never under 5 bps), twice the fees, twice
-   an option's spread. This step can only refuse, never upgrade.
+   an option's spread. This step can only refuse, never upgrade. **It runs
+   for studies only**: a panel's Supported is under stated costs and carries
+   no conservative verdict — say so whenever you report one.
 6. Records verdict, advice, both curves, every trade with its journal, the
    data's content hash, the ruleset's hash and the engine commit.
 

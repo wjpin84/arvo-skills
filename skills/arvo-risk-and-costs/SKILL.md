@@ -70,8 +70,9 @@ starting cash. Three tiers:
 | realistic | as stated | as stated | as stated |
 | conservative | ×1.5 | ×2, never under 5 bps | ×2 (and ×2 an option's spread) |
 
-**A Supported verdict must survive the conservative tier**; the re-run can
-only refuse. Fees as a share of *gross* return is reported when material —
+**A study's Supported verdict must survive the conservative tier**; the
+re-run can only refuse. A panel is never re-run at conservative costs, so
+its Supported is under stated costs only. Fees as a share of *gross* return is reported when material —
 gross, because comparing fees to a net figure understates them most where
 it matters, when fees turned a positive result negative. Expectancy is
 always "under which tier"; never quote it bare.
