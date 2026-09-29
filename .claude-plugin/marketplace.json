@@ -1,0 +1,11 @@
+{
+  "name": "arvo-skills",
+  "owner": { "name": "wjpin84" },
+  "plugins": [
+    {
+      "name": "arvo",
+      "source": "./",
+      "description": "Skills and agents for the Arvo platform."
+    }
+  ]
+}

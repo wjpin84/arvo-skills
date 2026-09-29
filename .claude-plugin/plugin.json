@@ -1,0 +1,8 @@
+{
+  "name": "arvo",
+  "description": "Arvo's own skills: the research loop over the arvo MCP server, rule and ruleset authoring, reading markets and data in Arvo's definitions, risk and costs, and working across the Arvo repositories.",
+  "version": "0.1.0",
+  "author": {
+    "name": "wjpin84"
+  }
+}
