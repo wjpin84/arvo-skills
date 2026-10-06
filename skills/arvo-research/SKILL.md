@@ -55,7 +55,9 @@ Most backtest results are noise; the job is to avoid believing them.
    (slower by the number of folds), or `run_panel` (a universe, one
    parameter set for every member; minutes for a hundred names).
 4. `open_finding` — read `read_this_first`, the verdict and the advice
-   **before any number**.
+   **before any number**. Then `data_findings`: what is wrong with the bars
+   underneath, such as a gap or a suspected unadjusted split. A verdict on
+   bad bars is a verdict about the bars; say so when you report it.
 5. `rank_findings` to place it; `compare_experiments` to explain why two
    differ.
 

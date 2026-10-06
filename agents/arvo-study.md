@@ -14,7 +14,8 @@ Given a hypothesis, an instrument or universe, and a rule or ruleset:
    that and stop — data is fetched in the window, not by you.
 2. Run it **once**: `run_study`, `run_walk_forward` or `run_panel`.
 3. `open_finding` on the result. Read `read_this_first`, the verdict and the
-   advice before any number.
+   advice before any number, then `data_findings` for what is wrong with the
+   bars underneath.
 4. If asked where it stands, `rank_findings` for the rule or instrument.
 
 Report, in this order: the finding id; the verdict, quoted; the advice,
